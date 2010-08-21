@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class RJThread
 private
   # 0x00
@@ -989,7 +990,7 @@ private
   # 0x86
   def op_i2f
     # raise 'unsupported opcode : i2f'
-    # ‚È‚É‚à‚µ‚È‚¢
+    # ãªã«ã‚‚ã—ãªã„
     @pc += 1
     opout "i2f"
   end
@@ -1407,7 +1408,7 @@ private
   # 0xb6
   def op_invokevirtual
     ft = const(u2)
-    @pc += 3 # æ‚É‚â‚Á‚Ä‚¨‚­
+    @pc += 3 # å…ˆã«ã‚„ã£ã¦ãŠã
     dump_stack
     cl = get_caller_obj(ft[2]).owner
     m  = cl.get_method ft[1],ft[2]
@@ -1432,7 +1433,7 @@ private
   # 0xb7
   def op_invokespecial
     ft = const(u2)
-    @pc += 3 # æ‚É‚â‚Á‚Ä‚¨‚­
+    @pc += 3 # å…ˆã«ã‚„ã£ã¦ãŠã
     m  = RJClassManager.instance.get(ft[0]).get_static_method ft[1],ft[2]
     if m.is_native?
       args = cut_stack m.arg_size
@@ -1457,7 +1458,7 @@ private
   def op_invokestatic
     dump_stack
     ft = const(u2)
-    @pc += 3 # æ‚É‚â‚Á‚Ä‚¨‚­
+    @pc += 3 # å…ˆã«ã‚„ã£ã¦ãŠã
     m  = RJClassManager.instance.get(ft[0]).get_static_method ft[1],ft[2]
     if m.is_native?
       args = cut_stack m.arg_size

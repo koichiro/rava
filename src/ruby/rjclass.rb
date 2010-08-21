@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-# -*- coding: cp932 -*-
+# -*- coding: utf-8 -*-
 # @file   jrclass.rb
 # @author K.S.
 #
@@ -8,7 +8,7 @@
 #
 # Create : K.S. 02/10/09 04:05:39
 #
-# java ‚ÌƒNƒ‰ƒX‚ğ“Ç‚İ‚Ş
+# java ã®ã‚¯ãƒ©ã‚¹ã‚’èª­ã¿è¾¼ã‚€
 #
 
 require 'rjinstance'
@@ -75,7 +75,7 @@ class RJClass
         # puts "--------------------------------- #{@this_class}"
         @super.get_method name,argtype
       else
-        # Object ‚É‚à‚İ‚Â‚©‚ç‚Ë
+        # Object ã«ã‚‚ã¿ã¤ã‹ã‚‰ã­
         raise 'no such method. : ' + method_name_type(name,argtype)
       end
     end
@@ -254,7 +254,7 @@ class RJClass
     }
     @jfields[const[name_index]] = [access_flag,const[descriptor_index],first_value]
     if access_flag & 0x0008
-      # static field ‚¾‚æEEE
+      # static field ã ã‚ˆãƒ»ãƒ»ãƒ»
       @jstaticfields[const[name_index]] = first_value
     end
   end

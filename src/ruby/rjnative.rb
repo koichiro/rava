@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjnative.rb
 # @author K.S.
 #
@@ -23,7 +24,7 @@ require 'rjn_thread'
 
 if __FILE__ == $0
   require 'rjclass'
-  # native ‚Ì—‚ğ•\¦
+  # native ã®é››ã‚’è¡¨ç¤º
   fn = ARGV[0] || 'test'
   fn.gsub!('\.','/')
   fn += '.class'
@@ -54,7 +55,7 @@ if __FILE__ == $0
       end
       puts "  def #{class_name}.#{n} method,args"
       if m.size > 1
-        # •¡”‚ÌŒ^‚ğ‚Â
+        # è¤‡æ•°ã®å‹ã‚’æŒã¤
         puts '    case method.mdesc'
         m.each{|mm|
           puts "    when '#{mm.mdesc}'"
@@ -63,7 +64,7 @@ if __FILE__ == $0
         puts ''
         puts '    end'
       else
-        # ˆê‚Â
+        # ä¸€ã¤
         puts "    # #{m[0].mdesc}"
         puts ''
       end
@@ -128,7 +129,7 @@ class RJN_java_lang_Object < RJNative
   # func(a,b,c,...) => arg[0] : a , arg[1] : b , arg[2] : c , ...
   def RJN_java_lang_Object.registerNatives method,args
     # ()V
-    # ‚È‚É‚à‚µ‚È‚¢
+    # ãªã«ã‚‚ã—ãªã„
     #raise 'unimplemented native method : registerNatives @ java/lang/Object'
   end
 

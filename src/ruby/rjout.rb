@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjout.rb
 # @author K.S.
 #
@@ -7,7 +8,7 @@
 #
 # Create : K.S. 02/10/12 21:52:36
 #
-# o—Í§Œä
+# å‡ºåŠ›åˆ¶å¾¡
 #
 
 module RJOut

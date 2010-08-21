@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-# -*- coding: cp932 -*-
+# -*- coding: utf-8 -*-
 # @file   rjclassmanager.rb
 # @author K.S.
 #
@@ -24,35 +24,34 @@ class RJClassManager
     @jclasses = {}
   end
 
-  # class ‚ğƒ[ƒh
+  # class ã‚’ãƒ­ãƒ¼ãƒ‰
   def load name
     puts " load class --> #{name}"
     fn = name.gsub(/\./,'/') # hoe.hue => hoe/hue
     fn += '.class'    #         => hoe/hue.class
     c = nil
-    puts fn
     open(fn,'rb'){|f|
       c = RJClass.new f
     }
     @jclasses[name] = c
 
-    # super class ‚Ìİ’è
+    # super class ã®è¨­å®š
     if c.super_class
       c.set_super(get c.super_class)
     end
     
-    # clinit ‚ª‚ ‚Á‚½‚ç
+    # clinit ãŒã‚ã£ãŸã‚‰
     # ...
     if c.has_clinit?
       clinit_thread = RJThread.new
       clinit_thread.set_clinit c
-      clinit_thread.interpret # ‚±‚±‚Å‘S•”‚â‚Á‚Ä‚µ‚Ü‚¤
+      clinit_thread.interpret # ã“ã“ã§å…¨éƒ¨ã‚„ã£ã¦ã—ã¾ã†
     end
 
     c
   end
 
-  # class ‚ğƒQƒbƒg‚·‚éB–³‚¯‚ê‚Îƒ[ƒh‚·‚é
+  # class ã‚’ã‚²ãƒƒãƒˆã™ã‚‹ã€‚ç„¡ã‘ã‚Œã°ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
   def get name
     # puts "load name : #{name}"
     if @jclasses.key? name
@@ -65,7 +64,7 @@ class RJClassManager
 end
 
 
-# require ‚Ì‡˜‚ÌŠÖŒW‚ÅA‚±‚±‚É
+# require ã®é †åºã®é–¢ä¿‚ã§ã€ã“ã“ã«
 
 class RJStringInstance < RJInstance
 

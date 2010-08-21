@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 
 class RJN_java_lang_Class < RJNative

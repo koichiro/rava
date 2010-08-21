@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjexception.rb
 # @author K.S.
 #
@@ -7,16 +8,16 @@
 #
 # Create : K.S. 02/10/13 14:36:56
 #
-# exception ’è‹`
+# exception å®šç¾©
 #
 #
 
 
 class RJException < Exception
-  # “Á‚É‚È‚É‚àEEE
+  # ç‰¹ã«ãªã«ã‚‚ãƒ»ãƒ»ãƒ»
 end
 
-# ƒXƒŒƒbƒhI—¹Žž—áŠO
+# ã‚¹ãƒ¬ãƒƒãƒ‰çµ‚äº†æ™‚ä¾‹å¤–
 class RJExceptionFinishThread < RJException
   # ...
 end

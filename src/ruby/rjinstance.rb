@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjinstance.rb
 # @author K.S.
 #
@@ -8,9 +9,9 @@
 # Create : K.S. 02/10/13 01:41:42
 #
 #
-# new されたインスタンスを表現
+# new 縺輔ｌ縺溘う繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧定｡ｨ迴ｾ
 #
-# 主に field 管理
+# 荳ｻ縺ｫ field 邂｡逅�
 
 
 class RJInstance

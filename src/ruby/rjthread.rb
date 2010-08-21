@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjthread.rb
 # @author K.S.
 #
@@ -7,7 +8,7 @@
 #
 # Create : K.S. 02/10/12 15:17:24
 #
-# Thread ÀsÀ‘Ô
+# Thread å®Ÿè¡Œå®Ÿæ…‹
 #
 
 require 'rjopcodeinfo'
@@ -19,14 +20,14 @@ class RJThread
   include RJOut
 
   def initialize
-    @method  = nil # Às’†‚Ìƒƒ\ƒbƒh
-    @stack   = []  # ƒXƒ^ƒbƒN
+    @method  = nil # å®Ÿè¡Œä¸­ã®ãƒ¡ã‚½ãƒƒãƒ‰
+    @stack   = []  # ã‚¹ã‚¿ãƒƒã‚¯
     @pc      = 0   # program counter
     @fp      = 0   # frame pointer
     @ruby_th = nil # ruby thread
   end
 
-  # clinit class ‚ğ‹N“®
+  # clinit class ã‚’èµ·å‹•
   def set_clinit cls
     @method = cls.get_static_method '<clinit>','()V'
     @stack += Array.new(@method.max_local)
@@ -44,7 +45,7 @@ class RJThread
     @stack[0] = obj
   end
   
-  # ‹N“®
+  # èµ·å‹•
   def kick
     @ruby_th = Thread.start{
       self.interpret
@@ -53,7 +54,7 @@ class RJThread
     }
   end
 
-  # ’Z‚¢EEE
+  # çŸ­ã„ãƒ»ãƒ»ãƒ»
   def interpret
     while true
       # puts @method.to_s + "========================= #{@pc}"
@@ -79,7 +80,7 @@ class RJThread
 private
 
   ##
-  # stack ‘€ì
+  # stack æ“ä½œ
   
   def local n
     @stack[@fp+n]
@@ -196,8 +197,8 @@ private
       when 'L'
         ret += 1 ; lflg = true
       end
-      # [ ‚ÍŒ©‚È‚­‚Ä‚¢‚¢‚Ì‚©‚Á‚ÄH
-      # ‚¢‚¢‚ñ‚¶‚á‚È‚¢‚ÌH@–³‹‚µ‚¿‚á‚Á‚Ä
+      # [ ã¯è¦‹ãªãã¦ã„ã„ã®ã‹ã£ã¦ï¼Ÿ
+      # ã„ã„ã‚“ã˜ã‚ƒãªã„ã®ï¼Ÿã€€ç„¡è¦–ã—ã¡ã‚ƒã£ã¦
     }
     ret + 1
   end
@@ -228,7 +229,7 @@ stack frame
 
     # puts "                              #{@stack.size} ==> #{extend_size}"
     
-    # stack ‚ğƒtƒŒ[ƒ€•ªL‚Î‚·
+    # stack ã‚’ãƒ•ãƒ¬ãƒ¼ãƒ åˆ†ä¼¸ã°ã™
     @stack += Array.new(extend_size)
     
     push @pc
@@ -246,7 +247,7 @@ stack frame
   ###################
   def restore_frame
     if @fp == 0
-      raise RJExceptionFinishThread # thread I—¹
+      raise RJExceptionFinishThread # thread çµ‚äº†
     end
     tfp = @fp
 

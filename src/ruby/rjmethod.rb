@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjmethod.rb
 # @author K.S.
 #
@@ -41,8 +42,8 @@ class RJMethod
     @arg_size  = calc_arg_size
     @ret_size  = calc_ret_size
     
-    @max_local = @arg_size # native ‚Å‚ÍÅ’á arg_size
-    @max_stack = 2         # native ‚Å‚ÍÅ’á 2
+    @max_local = @arg_size # native ã§ã¯æœ€ä½ arg_size
+    @max_stack = 2         # native ã§ã¯æœ€ä½ 2
     
     attributes_count = u2
     attributes_count.times{
@@ -164,8 +165,8 @@ class RJMethod
       when 'L'
         ret += 1 ; lflg = true
       end
-      # [ ‚ÍŒ©‚È‚­‚Ä‚¢‚¢‚Ì‚©‚Á‚ÄH
-      # ‚¢‚¢‚ñ‚¶‚á‚È‚¢‚ÌH@–³‹‚µ‚¿‚á‚Á‚Ä
+      # [ ã¯è¦‹ãªãã¦ã„ã„ã®ã‹ã£ã¦ï¼Ÿ
+      # ã„ã„ã‚“ã˜ã‚ƒãªã„ã®ï¼Ÿã€€ç„¡è¦–ã—ã¡ã‚ƒã£ã¦
     }
     ret + (is_static? ? 0 : 1)
   end
@@ -195,7 +196,7 @@ class RJMethod
   end
 
   def invoke_native args
-    # native ’T‚µ
+    # native æ¢ã—
     nm  = 'RJN_' + @owner.this_class.gsub('/','_')
     begin
       nc = Module.const_get(nm)

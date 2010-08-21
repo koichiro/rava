@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rava.rb
 # @author K.S.
 #
@@ -9,10 +10,10 @@
 #
 #
 # Rava
-# ( rava ‚©‚ŸEEE )
+# ( rava ã‹ããƒ»ãƒ»ãƒ» )
 
 
-# •K—v‚È‚Ì‚àA­‚È‚¢‚Ë‚¥EEE
+# å¿…è¦ãªã®ã‚‚ã€å°‘ãªã„ã­ã‡ãƒ»ãƒ»ãƒ»
 require 'rjthreadmanager'
 require 'rjclassmanager'
 
@@ -22,16 +23,16 @@ require 'rjclassmanager'
 tm = RJThreadManager.instance
 cm = RJClassManager .instance
 
-m = cm.load ARGV[0]      # main ‚ÈƒNƒ‰ƒX‚ğƒ[ƒh‚·‚é
-t = tm.create            # V‚µ‚¢ƒXƒŒƒbƒh‚ğ—pˆÓ
-t.set_main m,ARGV[1..-1] # main ‚ğ‹N“®‚·‚é€”õ‚ğ‚·‚é
+m = cm.load ARGV[0]      # main ãªã‚¯ãƒ©ã‚¹ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
+t = tm.create            # æ–°ã—ã„ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ç”¨æ„
+t.set_main m,ARGV[1..-1] # main ã‚’èµ·å‹•ã™ã‚‹æº–å‚™ã‚’ã™ã‚‹
 
-t.kick                   # ‚»‚ÌƒXƒŒƒbƒh‚ğ‹N“®i‚¤‚Ö‚¦j
+t.kick                   # ãã®ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ï¼ˆã†ã¸ãˆï¼‰
 
-# ‚È‚ñ‚©ŠÈ’P‚¾iÎj
+# ãªã‚“ã‹ç°¡å˜ã ï¼ˆç¬‘ï¼‰
 
 
-# ÅŒã‚Ì‚ª‚È‚­‚È‚é‚Ü‚ÅƒXƒgƒbƒv
+# æœ€å¾Œã®ãŒãªããªã‚‹ã¾ã§ã‚¹ãƒˆãƒƒãƒ—
 Thread.stop
 
 

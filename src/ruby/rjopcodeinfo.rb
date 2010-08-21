@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjopcodeinfo.rb
 # @author K.S.
 #
@@ -808,7 +809,7 @@ module RJOpcodeinfo
 
 end
 
-# ‚±‚¢‚Â‚ªÀs‚³‚ê‚é‚ÆARJThread ‚Ì—‚ğ“f‚­
+# ã“ã„ã¤ãŒå®Ÿè¡Œã•ã‚Œã‚‹ã¨ã€RJThread ã®é››ã‚’åã
 if $0 == __FILE__
   puts 'class RJThread'
   puts 'private'

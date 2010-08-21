@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: utf-8 -*-
 # @file   rjthreadmanager.rb
 # @author K.S.
 #
@@ -7,7 +8,7 @@
 #
 # Create : K.S. 02/10/12 18:28:06
 #
-# ƒXƒŒƒbƒh‚ğŠÇ—‚·‚é‚·‚é
+# ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ç®¡ç†ã™ã‚‹ã™ã‚‹
 #
 require 'singleton'
 
