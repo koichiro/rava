@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: cp932 -*-
 # @file   rjclassmanager.rb
 # @author K.S.
 #
@@ -26,9 +27,10 @@ class RJClassManager
   # class ‚ðƒ[ƒh
   def load name
     puts " load class --> #{name}"
-    fn = name.gsub('\.','/') # hoe.hue => hoe/hue
+    fn = name.gsub(/\./,'/') # hoe.hue => hoe/hue
     fn += '.class'    #         => hoe/hue.class
     c = nil
+    puts fn
     open(fn,'rb'){|f|
       c = RJClass.new f
     }

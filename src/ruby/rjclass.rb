@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# -*- coding: cp932 -*-
 # @file   jrclass.rb
 # @author K.S.
 #
@@ -324,7 +325,7 @@ end
 # 
 if __FILE__ == $0
   fn = ARGV[0] || 'test'
-  fn.gsub!('\.','/')
+  fn.gsub!(/\./,'/')
   fn += '.class'
   
   if (!fn); fn = 'test.class' ; end
