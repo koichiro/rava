@@ -295,7 +295,7 @@ class RJClass
 
   def verbose
     ret = 
-    "#{type} : #{@this_class}(#{@super_class})\n"
+    "#{self.class} : #{@this_class}(#{@super_class})\n"
     i=1
     @jconsts.each{|c|
       if c == nil ; next end
