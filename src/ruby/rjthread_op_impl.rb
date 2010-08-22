@@ -370,9 +370,13 @@ private
 
   # 0x32
   def op_aaload
-    raise 'unsupported opcode : aaload'
+    # raise 'unsupported opcode : aaload'
+    idx = pop
+    arr = pop
+    push arr[idx]
+
     @pc += 1
-    opout "aaload"
+    #opout "aaload"
   end
 
   # 0x33
