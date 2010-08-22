@@ -96,7 +96,7 @@ class RJStringInstance < RJInstance
   end
 
   def self.const_missing(id)
-    if id == :JThreadClass
+    if id == :JStringClass
       const_set id, RJClassManager.instance.get('java.lang.String')
     else
       super
