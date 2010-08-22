@@ -12,6 +12,7 @@
 #
 
 require 'rjinstance'
+require 'rjmethod'
 
 class RJClass
   
@@ -260,7 +261,6 @@ class RJClass
   end
   
   def load_methods
-    require 'rjmethod'
     m = RJMethod.new self,@cls
     @jmethods[method_name_type(m.mname,m.mdesc)] = m
   end

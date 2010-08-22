@@ -68,8 +68,6 @@ end
 
 class RJStringInstance < RJInstance
 
-  JStringClass = RJClassManager.instance.get('java.lang.String')
-  
   def initialize msg = ''
     @owner   = JStringClass
     @fields  = {}
@@ -97,6 +95,14 @@ class RJStringInstance < RJInstance
     "String : '#{get_string}'"
   end
 
+  def self.const_missing(id)
+    if id == :JThreadClass
+      const_set id, RJClassManager.instance.get('java.lang.String')
+    else
+      super
+    end
+  end
+
 end
 
 class RJArrayInstance < Array
@@ -118,7 +124,6 @@ class RJArrayInstance < Array
 end
 
 class RJThreadInstance < RJInstance
-  JThreadClass = RJClassManager.instance.get('java.lang.Thread')
 
   def initialize
     @owner   = JThreadClass
@@ -129,4 +134,13 @@ class RJThreadInstance < RJInstance
   def to_s
     "Java Thread Instance"
   end
+
+  def self.const_missing(id)
+    if id == :JThreadClass
+      const_set id, RJClassManager.instance.get('java.lang.Thread')
+    else
+      super
+    end
+  end
+
 end
